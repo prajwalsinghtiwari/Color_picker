@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colour-picker</title>
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+<script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    // Your  code will go here
+
+    function App() {
+        const [pickedColor, setPickedColor] = React.useState('#000000');
+        //  console.log(pickedColor);
+
+        return (
+            <div >
+                
+                    <label>Color Picker</label><br />
+                    <input type='color' style={{width:'200px', cursor:"pointer"}} value={pickedColor} onChange={(e) => setPickedColor(e.target.value)} />
+                
+                <div className='box' style={{backgroundColor:pickedColor,padding:"40px", marginTop:"20px", borderRadius:'15px'}}> Selected color: {pickedColor}</div>
+            </div>
+        )
+    }
+
+    let rootElement = document.getElementById("root");
+    ReactDOM.createRoot(rootElement).render(<App />);
+
+
+
+</script>
+
+</html>
